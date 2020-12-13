@@ -1,0 +1,39 @@
+* {
+    margin: 0em;
+    padding: 0em;
+    font-family: monospace;
+    background-color: grey;
+}
+
+#calculator {
+    background-color: pink;
+    height: 40em;
+    width: 20em;
+    margin: 0 auto;
+    top: 7em;
+    position: relative;
+    border-radius: 0.5em;
+}
+
+#screen {
+    background-color: lightgrey;
+    width: 90%;
+    height: 6em;
+    text-align: right;
+    position: relative;
+    top: 2em;
+    margin: auto;
+}
+
+#history{
+    background-color: lightgrey;
+    font-size: 1.5em;
+}
+
+#number{
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    background-color: lightgrey;
+    font-size: 2.5em;
+}
