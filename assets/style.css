@@ -8,17 +8,17 @@
 
 body {
     cursor: default;
-    background-color: lightgreen;
+    background-color: rgb(253, 204, 253);
 }
 
 #calculator {
-    background-color: rebeccapurple;
-    height: 38em;
+    background-color: purple;
+    height: 35em;
     width: 90%;
     margin: 0 auto;
-    top: 2em;
+    top: 3.5em;
     position: relative;
-    border-radius: 0.5em;
+    border-radius: 0.7em;
     box-shadow: 0.2em 0.2em;
 }
 
@@ -33,6 +33,7 @@ body {
     top: 2em;
     margin: auto;
     border-radius: 0.7em;
+    box-shadow: 0.2em 0.2em;
 }
 
 #history {
@@ -58,27 +59,43 @@ body {
     height: 25em;
     padding: 0.3em;
     width: 95%;
-    margin: auto;
+    margin: 0 auto;
     position: relative;
-    top: 5em;
-    grid-column-gap: 0.2em;
+    top: 4em;
+    grid-column-gap: 1em;
+    justify-content: center;
+}
+
+.buttons, .operators {
+    border: none;
+    cursor: pointer;
+    border-radius: 8em;
+    width: 2.2em;
+    height: 2.2em;
+    box-shadow: 0.1em 0.1em;
 }
 
 .buttons {
-    background-color: violet;
-    border: none;
-    padding: 0.9em;
-    font-size: 1.5em;
-    cursor: pointer;
-    border-radius: 8em;
-    width: 2.7em;
-    height: 3em;
+    background-color: rgb(235, 145, 235);
+    font-size: 1.6em;
+    font-weight: 600;
 }
 
-.buttons:focus {
-    border: hotpink solid 0.2em;
-    
+.operators {
+    background-color: rgb(236, 84, 236);
+    font-size: 1.5em;
+}
+
+.buttons:focus, .buttons:hover, .operators:focus, .operators:hover {
     outline: 0;
+}
+
+.buttons:focus, .buttons:hover {
+    border: rgb(236, 84, 236) solid 0.2em;
+}
+
+.operators:focus, .operators:hover {
+    border: rgb(245, 121, 245) solid 0.2em;
 }
 
 .fas.fa-divide, .fas.fa-times, .fas.fa-minus, .fas.fa-plus, .fas.fa-equals {
