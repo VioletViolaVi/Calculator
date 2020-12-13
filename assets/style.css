@@ -3,17 +3,24 @@
     padding: 0em;
     font-family: monospace;
     background-color: grey;
+    font-family: 'Patrick Hand SC', cursive;
+}
+
+body {
+    cursor: default;
 }
 
 #calculator {
     background-color: pink;
-    height: 40em;
-    width: 20em;
+    height: 38em;
+    width: 90%;
     margin: 0 auto;
-    top: 7em;
+    top: 2em;
     position: relative;
     border-radius: 0.5em;
 }
+
+/**************************************************** screen */
 
 #screen {
     background-color: lightgrey;
@@ -25,15 +32,40 @@
     margin: auto;
 }
 
-#history{
+#history {
     background-color: lightgrey;
     font-size: 1.5em;
 }
 
-#number{
+#number {
     bottom: 0;
     position: absolute;
     right: 0;
     background-color: lightgrey;
     font-size: 2.5em;
+}
+
+/**************************************************** buttons */
+
+#buttonGrid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: orange;
+    height: 25em;
+    padding: 0.3em;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    top: 5em;
+    cursor: pointer;
+}
+
+.buttons {
+    background-color: yellow;
+    border: 1px solid gray;
+    padding: 0.9em;
+}
+
+.fas.fa-divide, .fas.fa-times, .fas.fa-minus, .fas.fa-plus, .fas.fa-equals {
+    background-color: yellow;
 }
