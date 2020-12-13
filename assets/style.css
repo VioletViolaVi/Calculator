@@ -43,7 +43,7 @@ body {
     border-radius: 0.7em;
 }
 
-#number {
+#answer {
     position: absolute;
     right: 0;
     font-size: 2em;
@@ -66,7 +66,7 @@ body {
     justify-content: center;
 }
 
-.buttons, .operators {
+.number, .operator {
     border: none;
     cursor: pointer;
     border-radius: 8em;
@@ -75,26 +75,26 @@ body {
     box-shadow: 0.1em 0.1em;
 }
 
-.buttons {
+.number {
     background-color: rgb(235, 145, 235);
     font-size: 1.6em;
     font-weight: 600;
 }
 
-.operators {
+.operator {
     background-color: rgb(236, 84, 236);
     font-size: 1.5em;
 }
 
-.buttons:focus, .buttons:hover, .operators:focus, .operators:hover {
+.number:focus, .number:hover, .operator:focus, .operator:hover {
     outline: 0;
 }
 
-.buttons:focus, .buttons:hover {
+.number:focus, .number:hover {
     border: rgb(236, 84, 236) solid 0.2em;
 }
 
-.operators:focus, .operators:hover {
+.operator:focus, .operator:hover {
     border: rgb(245, 121, 245) solid 0.2em;
 }
 
