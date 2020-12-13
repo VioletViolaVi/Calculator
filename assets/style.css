@@ -73,12 +73,12 @@ body {
     width: 2.2em;
     height: 2.2em;
     box-shadow: 0.1em 0.1em;
+    font-weight: 600;
 }
 
 .number {
     background-color: rgb(235, 145, 235);
     font-size: 1.6em;
-    font-weight: 600;
 }
 
 .operator {

@@ -10,19 +10,33 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#history").innerText = history;
     };
 
+    // collects calculation answer from html
+    function getAnswer() {
+        return document.querySelector("#answer").innerText;
+    };
+
     // shows answer in screen
     function displayAnswer(answer) {
-        document.querySelector("#answer").innerText = addCommasToAnswer(answer);
+        if (answer === "") {
+            document.querySelector("#answer").innerText = 0;
+        } else {
+            document.querySelector("#answer").innerText = addCommasToAnswer(answer);
+        }
     };
 
-    // adds commas to number in screen
+    // adds commas to number
     function addCommasToAnswer(answer) {
-        let n = Number(answer);
-        let formattedAnswer = n.toLocaleString("en");
+        let number = Number(answer);
+        let formattedAnswer = number.toLocaleString("en");
         return formattedAnswer;
     };
-    displayAnswer(22222222);
 
+    // removes commas from formatted number
+    function removeCommasFromNumbers(answer) {
+        return Number(answer.replace(/,/g,""));
+    };
+
+    
 
 
 
