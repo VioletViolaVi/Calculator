@@ -1,23 +1,25 @@
 * {
     margin: 0em;
     padding: 0em;
-    font-family: monospace;
-    background-color: grey;
     font-family: 'Patrick Hand SC', cursive;
+    list-style: none;
+    box-sizing: border-box;
 }
 
 body {
     cursor: default;
+    background-color: lightgreen;
 }
 
 #calculator {
-    background-color: pink;
+    background-color: rebeccapurple;
     height: 38em;
     width: 90%;
     margin: 0 auto;
     top: 2em;
     position: relative;
     border-radius: 0.5em;
+    box-shadow: 0.2em 0.2em;
 }
 
 /**************************************************** screen */
@@ -30,19 +32,22 @@ body {
     position: relative;
     top: 2em;
     margin: auto;
+    border-radius: 0.7em;
 }
 
 #history {
     background-color: lightgrey;
     font-size: 1.5em;
+    padding-right: 0.1em;
+    border-radius: 0.7em;
 }
 
 #number {
-    bottom: 0;
     position: absolute;
     right: 0;
-    background-color: lightgrey;
-    font-size: 2.5em;
+    font-size: 2em;
+    padding-right: 0.1em;
+    bottom: -0.2em;
 }
 
 /**************************************************** buttons */
@@ -50,22 +55,32 @@ body {
 #buttonGrid {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    background-color: orange;
     height: 25em;
     padding: 0.3em;
-    width: 90%;
+    width: 95%;
     margin: auto;
     position: relative;
     top: 5em;
-    cursor: pointer;
+    grid-column-gap: 0.2em;
 }
 
 .buttons {
-    background-color: yellow;
-    border: 1px solid gray;
+    background-color: violet;
+    border: none;
     padding: 0.9em;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 8em;
+    width: 2.7em;
+    height: 3em;
+}
+
+.buttons:focus {
+    border: hotpink solid 0.2em;
+    
+    outline: 0;
 }
 
 .fas.fa-divide, .fas.fa-times, .fas.fa-minus, .fas.fa-plus, .fas.fa-equals {
-    background-color: yellow;
+    font-size: 1em;
 }
