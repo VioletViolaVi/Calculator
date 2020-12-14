@@ -6,13 +6,9 @@ $("document").ready(function () {
     // let ac = document.getElementById("ac");
     // let ce = document.getElementById("ce");
     // let decimal = document.getElementById("decimal");
-
+    // let operatorBtns = document.getElementsByClassName("operator");
     let bracket = document.getElementsByClassName("bracket");
-
     let numBtns = document.getElementsByClassName("number");
-    let operatorBtns = document.getElementsByClassName("operator");
-
-
 
 
 
@@ -44,13 +40,15 @@ $("document").ready(function () {
     displayOperators();
 
 
-    // clears calculator screen
-    function clearWholeScreen() {
-        $("#ac").click(function () {
-            $("#answer").text("");
+    // responsible for decimal point
+    function decimalPoint() {
+        $("#decimal").click(function () {
+            if (!$("#answer").text().includes(".")) {
+                $("#answer").append(".");
+            };
         });
     };
-    clearWholeScreen();
+    decimalPoint();
 
 
     // clear latest data entry
@@ -64,16 +62,23 @@ $("document").ready(function () {
     clearBackSpace();
 
 
-
-    // responsible for decimal point
-    function decimalPoint() {
-        $("#decimal").click(function () {
-            if (!$("#answer").text().includes(".")) {
-                $("#answer").append(".");  
-            };
+    // clears calculator screen
+    function clearWholeScreen() {
+        $("#ac").click(function () {
+            $("#answer").text("");
         });
     };
-    decimalPoint();
+    clearWholeScreen();
+
+
+    // conducts the mathematics
+    function performsArithmetic() {
+        $("#equals").click(function () {
+            let calculatedAnswer = eval($("#answer").text());
+            $("#answer").text(calculatedAnswer);
+        });
+    };
+    performsArithmetic();
 
 
 
