@@ -5,12 +5,13 @@ $("document").ready(function () {
     // let evalStringArray = [];    
     // let ac = document.getElementById("ac");
     // let ce = document.getElementById("ce");
+    // let decimal = document.getElementById("decimal");
 
-    let decimal = document.getElementById("decimal");
     let bracket = document.getElementsByClassName("bracket");
 
     let numBtns = document.getElementsByClassName("number");
     let operatorBtns = document.getElementsByClassName("operator");
+
 
 
 
@@ -29,8 +30,6 @@ $("document").ready(function () {
     displayBtnNums();
 
 
-
-
     // displays operators on screen when clicked
     function displayOperators() {
         $(".operator").click(function () {
@@ -45,8 +44,6 @@ $("document").ready(function () {
     displayOperators();
 
 
-
-
     // clears calculator screen
     function clearWholeScreen() {
         $("#ac").click(function () {
@@ -54,7 +51,6 @@ $("document").ready(function () {
         });
     };
     clearWholeScreen();
-
 
 
     // clear latest data entry
@@ -66,6 +62,18 @@ $("document").ready(function () {
         });
     };
     clearBackSpace();
+
+
+
+    // responsible for decimal point
+    function decimalPoint() {
+        $("#decimal").click(function () {
+            if (!$("#answer").text().includes(".")) {
+                $("#answer").append(".");  
+            };
+        });
+    };
+    decimalPoint();
 
 
 
