@@ -1,18 +1,34 @@
 // waits until DOM has been fully loaded
 $("document").ready(function () {
 
-    // displays btn values on screen when clicked
+    // displays num btn values on screen when clicked
     function displayBtnNums() {
         $(".number").click(function () {
-            let calcNums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-            for (let index = 0; index < calcNums.length; index++) {
-                if (calcNums[index] === $(this).data("screen")) {
-                    $("#answer").append(calcNums[index]);
+            let numBtns = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            for (let index = 0; index < numBtns.length; index++) {
+                if (numBtns[index] === $(this).data("number")) {
+                    $("#answer").append(numBtns[index]);
                 };
             };
         });
     };
     displayBtnNums();
+
+    // displays operators on screen when clicked
+    function displayOperators() {
+        $(".operator").click(function () {
+            let operatorBtns = ["/", "*", "-", "+"];
+            for (let index = 0; index < operatorBtns.length; index++) {
+                if (operatorBtns[index] === $(this).data("operator")) {
+                    $("#answer").append(operatorBtns[index]);
+                };
+            };
+        });
+    };
+    displayOperators();   
+
+
+
 
     
     let decimal = document.getElementById("decimal");
