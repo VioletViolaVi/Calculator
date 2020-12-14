@@ -1,17 +1,6 @@
 // waits until DOM has been fully loaded
 $("document").ready(function () {
 
-    // let answer = document.getElementById("answer");
-    // let evalStringArray = [];    
-    // let ac = document.getElementById("ac");
-    // let ce = document.getElementById("ce");
-    // let decimal = document.getElementById("decimal");
-    // let operatorBtns = document.getElementsByClassName("operator");
-    let bracket = document.getElementsByClassName("bracket");
-    let numBtns = document.getElementsByClassName("number");
-
-
-
     // displays num btn values on screen when clicked
     function displayBtnNums() {
         $(".number").click(function () {
@@ -50,6 +39,21 @@ $("document").ready(function () {
     };
     decimalPoint();
 
+    // responsible for 1st bracket
+    function firstBracket() {
+        $("#bracket1").click(function () {
+            $("#answer").append("(");
+        });
+    };
+    firstBracket();
+
+    // responsible for 2nd bracket
+    function secondBracket() {
+        $("#bracket2").click(function () {
+            $("#answer").append(")");
+        });
+    };
+    secondBracket();
 
     // clear latest data entry
     function clearBackSpace() {
