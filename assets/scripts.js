@@ -1,6 +1,20 @@
 // waits until DOM has been fully loaded
 $("document").ready(function () {
 
+    // let answer = document.getElementById("answer");
+    // let evalStringArray = [];    
+    // let ac = document.getElementById("ac");
+    // let ce = document.getElementById("ce");
+
+    let decimal = document.getElementById("decimal");
+    let bracket = document.getElementsByClassName("bracket");
+
+    let numBtns = document.getElementsByClassName("number");
+    let operatorBtns = document.getElementsByClassName("operator");
+
+
+
+
     // displays num btn values on screen when clicked
     function displayBtnNums() {
         $(".number").click(function () {
@@ -14,6 +28,9 @@ $("document").ready(function () {
     };
     displayBtnNums();
 
+
+
+
     // displays operators on screen when clicked
     function displayOperators() {
         $(".operator").click(function () {
@@ -25,22 +42,38 @@ $("document").ready(function () {
             };
         });
     };
-    displayOperators();   
+    displayOperators();
 
 
 
 
-    
-    let decimal = document.getElementById("decimal");
-    let bracket = document.getElementsByClassName("bracket");
-    
-    let ac = document.getElementById("ac");
-    let ce = document.getElementById("ce");
-    
-    let answer = document.getElementById("answer");
-    
-    let numBtns = document.getElementsByClassName("number");
-    let operatorBtns = document.getElementsByClassName("operator");
+    // clears calculator screen
+    function clearWholeScreen() {
+        $("#ac").click(function () {
+            $("#answer").text("");
+        });
+    };
+    clearWholeScreen();
+
+
+
+    // clear latest data entry
+    function clearBackSpace() {
+        $("#ce").click(function () {
+            currentEntry = $("#answer").text();
+            editedEntry = currentEntry.slice(0, currentEntry.length - 1);
+            $("#answer").text(editedEntry);
+        });
+    };
+    clearBackSpace();
+
+
+
+
+
+
+
+
 
 
 
