@@ -1,21 +1,30 @@
 // waits until DOM has been fully loaded
 $("document").ready(function () {
 
-    // displays numbers when clicked
-    function displayBtnNum() {
+    // displays btn values on screen when clicked
+    function displayBtnNums() {
         $(".number").click(function () {
-            let calculatorNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "."];
-            for (let index = 0; index < calculatorNumbers.length; index++) {
-                if (calculatorNumbers[index] === $(this).data("number")) {
-                    $("#answer").append(calculatorNumbers[index]);
+            let calcNums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            for (let index = 0; index < calcNums.length; index++) {
+                if (calcNums[index] === $(this).data("screen")) {
+                    $("#answer").append(calcNums[index]);
                 };
             };
         });
     };
-    displayBtnNum();
+    displayBtnNums();
 
-
-
+    
+    let decimal = document.getElementById("decimal");
+    let bracket = document.getElementsByClassName("bracket");
+    
+    let ac = document.getElementById("ac");
+    let ce = document.getElementById("ce");
+    
+    let answer = document.getElementById("answer");
+    
+    let numBtns = document.getElementsByClassName("number");
+    let operatorBtns = document.getElementsByClassName("operator");
 
 
 
@@ -61,73 +70,6 @@ $("document").ready(function () {
 
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // document.addEventListener("DOMContentLoaded", function () {
 //     // collects calculation history from html
 //     function getHistory() {
