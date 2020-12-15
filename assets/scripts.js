@@ -84,14 +84,14 @@ $("document").ready(function () {
     };
     clearBackSpace();
 
-    // clears calculator screen
-    function clearWholeScreen() {
+    // clears calculator screen using ac
+    function acClearScreen() {
         $("#ac").click(function () {
             $("#history").text("");
             $("#answer").text("");
         });
     };
-    clearWholeScreen();
+    acClearScreen();
 
     // conducts the mathematics
     function performsArithmetic() {
@@ -101,4 +101,5 @@ $("document").ready(function () {
         });
     };
     performsArithmetic();
+
 });
