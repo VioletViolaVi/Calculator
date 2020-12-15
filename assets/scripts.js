@@ -33,6 +33,7 @@ $("document").ready(function () {
     function decimalPoint() {
         $("#decimal").click(function () {
             if (!$("#answer").text().includes(".")) {
+                $("#history").append(".");
                 $("#answer").append(".");
             };
         });
@@ -42,6 +43,7 @@ $("document").ready(function () {
     // responsible for 1st bracket
     function firstBracket() {
         $("#bracket1").click(function () {
+            $("#history").append("(");
             $("#answer").append("(");
         });
     };
@@ -50,25 +52,26 @@ $("document").ready(function () {
     // responsible for 2nd bracket
     function secondBracket() {
         $("#bracket2").click(function () {
+            $("#history").append(")");
             $("#answer").append(")");
         });
     };
     secondBracket();
 
     // adds 2nd bracket(s) if only 1st bracket(s) is/are present
-    function autoAdd2ndBracket() {
+    function autoAddClosingBrackets() {
         $("#equals").click(function () {
+            let screenContent = $("#answer").text();
+            let firstBrackets = screenContent.match(/\(/g);            
             if ($("#answer").text().includes("(") && !$("#answer").text().includes(")")) {
-                let screenContent = $("#answer").text();
-                let matchBrackets = screenContent.match(/\(/g);
-                matchBrackets.forEach(element => {
+                firstBrackets.forEach(function () {
+                    $("#history").append(")");
                     $("#answer").append(")");
-                    console.log(matchBrackets);
                 });
             };
         });
     };
-    autoAdd2ndBracket();
+    autoAddClosingBrackets();
 
     // clear latest data entry
     function clearBackSpace() {
@@ -99,6 +102,15 @@ $("document").ready(function () {
     };
     performsArithmetic();
 
+    // shows error message 
+    function errorMessage() {
+        $("#equals").click(function () {
+            if ("SyntaxError") {
+                $("#answer").text("ERROR");
+            };
+        });
+    };
+    errorMessage();
 
 
 
