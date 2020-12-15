@@ -1,4 +1,4 @@
-// waits until DOM has been fully loaded
+// waits until DOM has fully loaded
 $("document").ready(function () {
 
     // displays num btn values on screen when clicked
@@ -7,6 +7,7 @@ $("document").ready(function () {
             let numBtns = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
             for (let index = 0; index < numBtns.length; index++) {
                 if (numBtns[index] === $(this).data("number")) {
+                    $("#history").append(numBtns[index]);
                     $("#answer").append(numBtns[index]);
                 };
             };
@@ -14,20 +15,19 @@ $("document").ready(function () {
     };
     displayBtnNums();
 
-
     // displays operators on screen when clicked
     function displayOperators() {
         $(".operator").click(function () {
             let operatorBtns = ["/", "*", "-", "+"];
             for (let index = 0; index < operatorBtns.length; index++) {
                 if (operatorBtns[index] === $(this).data("operator")) {
+                    $("#history").append(operatorBtns[index]);
                     $("#answer").append(operatorBtns[index]);
                 };
             };
         });
     };
     displayOperators();
-
 
     // responsible for decimal point
     function decimalPoint() {
@@ -55,25 +55,40 @@ $("document").ready(function () {
     };
     secondBracket();
 
+    // adds 2nd bracket(s) if only 1st bracket(s) is/are present
+    function autoAdd2ndBracket() {
+        $("#equals").click(function () {
+            if ($("#answer").text().includes("(") && !$("#answer").text().includes(")")) {
+                let screenContent = $("#answer").text();
+                let matchBrackets = screenContent.match(/\(/g);
+                matchBrackets.forEach(element => {
+                    $("#answer").append(")");
+                    console.log(matchBrackets);
+                });
+            };
+        });
+    };
+    autoAdd2ndBracket();
+
     // clear latest data entry
     function clearBackSpace() {
         $("#ce").click(function () {
             currentEntry = $("#answer").text();
             editedEntry = currentEntry.slice(0, currentEntry.length - 1);
+            $("#history").text(editedEntry);
             $("#answer").text(editedEntry);
         });
     };
     clearBackSpace();
 
-
     // clears calculator screen
     function clearWholeScreen() {
         $("#ac").click(function () {
+            $("#history").text("");
             $("#answer").text("");
         });
     };
     clearWholeScreen();
-
 
     // conducts the mathematics
     function performsArithmetic() {
@@ -131,11 +146,9 @@ $("document").ready(function () {
 
 
 
-
-
-
-
 });
+
+
 // document.addEventListener("DOMContentLoaded", function () {
 //     // collects calculation history from html
 //     function getHistory() {
@@ -190,3 +203,31 @@ $("document").ready(function () {
 //         });
 //     };
 // });
+
+
+
+    // $("#equals").click(function () {
+    //     let answerText = $("#answer").text();
+    //     for (let index = 0; index < answerText.length; index++) {
+    //         console.log(index);
+    //         if ($("#answer").text().includes("(") && !$("#answer").text().includes(")")) {
+    //             $("#answer").append(")");
+    //         };
+    //     };
+    // });
+
+    //     let firstBracketAmount = ;
+    //     let all1stBrackets = [];
+    //     for (let index = 0; index < #.length; index++) {
+    //         if ( $("#answer").text().includes("(") ) {
+    //             all1stBrackets.push(")");
+    //             console.log(all1stBrackets);
+    //         };
+    //     };
+    // });
+    // all1stBrackets.forEach(element => {
+
+    // });
+    // if ($("#answer").text("(").length !== $("#answer").text(")").length) {
+    //     $("#answer").append(")");
+    // };
