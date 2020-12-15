@@ -1,4 +1,4 @@
-# Mini Online Calculator
+# Online Calculator
 This is a mini online calculator that uses HTML, CSS and JavaScript to be produced.
 - HTML provided the basic structure of the code.
 - CSS added the styling to the basic structure of the code.
